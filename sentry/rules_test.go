@@ -25,6 +25,12 @@ func TestRulesService_List(t *testing.T) {
 				{
 				  "id": "sentry.rules.conditions.first_seen_event.FirstSeenEventCondition",
 				  "name": "An issue is first seen"
+				},
+				{
+				  "interval": "1h", 
+				  "name": "An issue is seen more than 10 times in 1h",
+				  "value": 10, 
+                  "id": "sentry.rules.conditions.event_frequency.EventFrequencyCondition"
 				}
 			  ],
 			  "id": "123456",
@@ -58,6 +64,12 @@ func TestRulesService_List(t *testing.T) {
 						ID: "sentry.rules.conditions.first_seen_event.FirstSeenEventCondition",
 						Name: "An issue is first seen",
 					},
+					{
+							ID: "sentry.rules.conditions.event_frequency.EventFrequencyCondition",
+							Name: "An issue is seen more than 10 times in 1h",
+							Value: "10",
+							Interval: "1h",
+					},
 				},
 				Actions: []RuleAction{
 					{
@@ -89,6 +101,12 @@ func TestRulesService_Create(t *testing.T) {
 			"name": "Notify errors",
 			"conditions": []map[string]interface{}{
 				{"ID": "sentry.rules.conditions.first_seen_event.FirstSeenEventCondition"},
+				{
+					"ID": "sentry.rules.conditions.event_frequency.EventFrequencyCondition",
+					"Name": "An issue is seen more than 10 times in 1h",
+					"Value": 10,
+					"Interval": "1h",
+				},
 			},
 			"actions": []map[string]interface{}{
 				{
@@ -110,6 +128,12 @@ func TestRulesService_Create(t *testing.T) {
 				{
 					"id": "sentry.rules.conditions.first_seen_event.FirstSeenEventCondition",
 					"name": "An issue is first seen"
+				},
+				{
+				  "interval": "1h", 
+				  "name": "An issue is seen more than 10 times in 1h",
+				  "value": 10, 
+                  "id": "sentry.rules.conditions.event_frequency.EventFrequencyCondition"
 				}
 			],
 			"id": "123456",
@@ -133,6 +157,11 @@ func TestRulesService_Create(t *testing.T) {
 			Name: "Notify errors",
 			Conditions: []*CreateRuleConditionParams{
 				{ID: "sentry.rules.conditions.first_seen_event.FirstSeenEventCondition"},
+				{
+					ID: "sentry.rules.conditions.event_frequency.EventFrequencyCondition",
+					Value: 10,
+					Interval: "1h",
+				},
 			},
 			Actions: []*CreateRuleActionParams{
 				{
@@ -158,6 +187,12 @@ func TestRulesService_Create(t *testing.T) {
 				{
 					ID: "sentry.rules.conditions.first_seen_event.FirstSeenEventCondition",
 					Name: "An issue is first seen",
+				},
+				{
+					ID: "sentry.rules.conditions.event_frequency.EventFrequencyCondition",
+					Name: "An issue is seen more than 10 times in 1h",
+					Value: "10",
+					Interval: "1h",
 				},
 			},
 			Actions: []RuleAction{
@@ -189,6 +224,12 @@ func TestRulesService_Update(t *testing.T) {
 			"name": "Notify errors",
 			"conditions": []map[string]interface{}{
 				{"ID": "sentry.rules.conditions.first_seen_event.FirstSeenEventCondition"},
+				{
+					"ID": "sentry.rules.conditions.event_frequency.EventFrequencyCondition",
+					"Name": "An issue is seen more than 10 times in 1h",
+					"Value": 10,
+					"Interval": "1h",
+				},
 			},
 			"actions": []map[string]interface{}{
 				{
@@ -210,6 +251,12 @@ func TestRulesService_Update(t *testing.T) {
 				{
 					"id": "sentry.rules.conditions.first_seen_event.FirstSeenEventCondition",
 					"name": "An issue is first seen"
+				},
+				{
+				  "interval": "1h", 
+				  "name": "An issue is seen more than 10 times in 1h",
+				  "value": 10, 
+                  "id": "sentry.rules.conditions.event_frequency.EventFrequencyCondition"
 				}
 			],
 			"id": "123456",
@@ -236,6 +283,12 @@ func TestRulesService_Update(t *testing.T) {
 				{
 					ID: "sentry.rules.conditions.first_seen_event.FirstSeenEventCondition",
 					Name: "An issue is first seen",
+				},
+				{
+					ID: "sentry.rules.conditions.event_frequency.EventFrequencyCondition",
+					Name: "An issue is seen more than 10 times in 1h",
+					Value: "10",
+					Interval: "1h",
 				},
 			},
 			Actions: []RuleAction{
@@ -265,6 +318,12 @@ func TestRulesService_Update(t *testing.T) {
 				{
 					ID: "sentry.rules.conditions.first_seen_event.FirstSeenEventCondition",
 					Name: "An issue is first seen",
+				},
+				{
+					ID: "sentry.rules.conditions.event_frequency.EventFrequencyCondition",
+					Name: "An issue is seen more than 10 times in 1h",
+					Value: "10",
+					Interval: "1h",
 				},
 			},
 			Actions: []RuleAction{
